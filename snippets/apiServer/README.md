@@ -1,2 +1,2 @@
 # my-code-snippets
-some code snippets for a faster access
+About flask and server 
