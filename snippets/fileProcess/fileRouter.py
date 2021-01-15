@@ -17,3 +17,18 @@ def get_all_image_name(file_dir):
 
 def get_all_video_name(file_dir):
     return get_all_file_name(file_dir, ['.mov','.mkv','.mp4','.avi'])
+
+
+import hashlib
+
+def get_file_md5(file_name):
+    """[calculate file hash md5]
+    """
+    if os.path.isfile(file_name):
+        file_content = open(file_name, 'rb')
+        contents = file_content.read()
+        file_content.close()
+        md5 = hashlib.md5(contents).hexdigest()
+    else:
+        md5 = None
+    return md5
