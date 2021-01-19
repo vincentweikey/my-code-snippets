@@ -18,7 +18,12 @@ def get_all_image_name(file_dir):
 def get_all_video_name(file_dir):
     return get_all_file_name(file_dir, ['.mov','.mkv','.mp4','.avi'])
 
-
+def create_foldr_if_not_exists(folder_name):
+    if not os.path.exists(folder_name):
+        os.mkdir(folder_name)
+    else:
+        pass
+        
 import hashlib
 
 def get_file_md5(file_name):
