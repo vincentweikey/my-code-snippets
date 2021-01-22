@@ -1,6 +1,7 @@
+'''this file include basic colorspace convert snippets
+'''
 import cv2
 import numpy as np
-
 
 def imconvert(img, src, dst):
     """Convert an image from the src colorspace to dst colorspace.
@@ -267,4 +268,3 @@ hsv2bgr = convert_color_factory('hsv', 'bgr')
 bgr2hls = convert_color_factory('bgr', 'hls')
 
 hls2bgr = convert_color_factory('hls', 'bgr')
-

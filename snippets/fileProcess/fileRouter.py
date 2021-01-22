@@ -37,3 +37,18 @@ def get_file_md5(file_name):
     else:
         md5 = None
     return md5
+
+import cv2
+def rename_image_as_md5_and_united_in_new_folder(root, dst_folder, save_ext='.jpg'):
+    """[just as name]
+    Args:
+        root ([type]): [router root]
+        dst_folder ([type]): [where to save]
+        save_ext (str, optional): [ext of save format]. Defaults to '.jpg'.
+    """
+    for image_path in get_all_image_name(root):
+        md5 =  get_file_md5(image_path)
+        img = cv2.imread(image_path, cv2.IMREAD_COLOR)
+        save_name = os.path.join(dst_folder, md5+save_ext)
+        cv2.imwrite(save_name, img, [int( cv2.IMWRITE_JPEG_QUALITY), 100])
+
