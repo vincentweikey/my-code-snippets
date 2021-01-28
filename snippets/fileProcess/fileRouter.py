@@ -51,4 +51,3 @@ def rename_image_as_md5_and_united_in_new_folder(root, dst_folder, save_ext='.jp
         img = cv2.imread(image_path, cv2.IMREAD_COLOR)
         save_name = os.path.join(dst_folder, md5+save_ext)
         cv2.imwrite(save_name, img, [int( cv2.IMWRITE_JPEG_QUALITY), 100])
-
